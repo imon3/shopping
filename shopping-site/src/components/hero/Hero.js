@@ -3,8 +3,8 @@ import React from "react";
 const Hero = () => {
   return (
     <header className="hero">
-      <div className="banner-title">
-        Furniture Collection
+      <div className="banner">
+        <h1 className="banner-title">Furniture Collection</h1>
         <button className="banner-btn">shop now</button>
       </div>
     </header>
