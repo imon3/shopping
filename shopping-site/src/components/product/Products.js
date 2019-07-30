@@ -25,14 +25,13 @@ class Products extends React.Component {
 
   render() {
     const { products } = this.state;
+
     return (
       <section className="products">
         <div className="section-title">
           <h2>Our Products</h2>
         </div>
-        {products.map((item, index) => {
-          return <Product key={index} product={item} />;
-        })}
+        <Product products={products} />;
       </section>
     );
   }
