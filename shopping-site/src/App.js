@@ -5,15 +5,43 @@ import "./App.css";
 import Nav from "./components/navigation/Nav";
 import Hero from "./components/hero/Hero";
 import Products from "./components/product/Products";
+import Cart from "./components/cart/Cart";
 
-function App() {
-  return (
-    <div className="App">
-      <Route path="/" component={Nav} />
-      <Route path="/" exact component={Hero} />
-      <Route path="/" component={Products} />
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      cartOverlay: "",
+      cartBtn: "",
+      closeCartBtn: "",
+      clearCartBtn: "",
+      cartDOM: "",
+      cartItems: "",
+      cartTotal: "",
+      cartContent: "",
+      productsDOM: "",
+      cart: []
+    };
+  }
+
+  render() {
+    console.log(this.state);
+    return (
+      <div className="App">
+        <Route path="/" render={props => <Nav {...props} />} />
+        <Route path="/" exact render={props => <Hero {...props} />} />
+        <Route
+          path="/"
+          render={props => <Products {...props} state={this.state} />}
+        />
+        <Route
+          path="/"
+          render={props => <Cart {...props} state={this.state} />}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;

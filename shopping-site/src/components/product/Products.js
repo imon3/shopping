@@ -5,8 +5,8 @@ import Product from "./Product.js";
 const newItems = items;
 
 class Products extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       products: []
@@ -31,7 +31,7 @@ class Products extends React.Component {
         <div className="section-title">
           <h2>Our Products</h2>
         </div>
-        <Product products={products} />;
+        <Product products={products} productsDOM={this.props.productsDOM} />;
       </section>
     );
   }
