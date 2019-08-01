@@ -1,5 +1,14 @@
 import React from "react";
 
+import "../../images/product-1.jpeg";
+import "../../images/product-2.jpeg";
+import "../../images/product-3.jpeg";
+import "../../images/product-4.jpeg";
+import "../../images/product-5.jpeg";
+import "../../images/product-6.jpeg";
+import "../../images/product-7.jpeg";
+import "../../images/product-8.jpeg";
+
 class Product extends React.Component {
   componentDidMount() {
     this.setState({
