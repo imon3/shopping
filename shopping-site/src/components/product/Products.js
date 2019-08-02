@@ -9,7 +9,8 @@ class Products extends React.Component {
     super(props);
 
     this.state = {
-      products: []
+      products: [],
+      cart: []
     };
   }
 
@@ -23,7 +24,19 @@ class Products extends React.Component {
     this.getItems();
   }
 
+  getItem = id => {
+    let cartItems = this.state.products.filter(
+      product => product.sys.id === id
+    );
+    console.log(cartItems);
+
+    this.setState({
+      cart: [...cartItems]
+    });
+  };
+
   render() {
+    console.log(this.state.cart);
     const { products } = this.state;
 
     return (
@@ -31,7 +44,12 @@ class Products extends React.Component {
         <div className="section-title">
           <h2>Our Products</h2>
         </div>
-        <Product products={products} productsDOM={this.props.productsDOM} />;
+        <Product
+          products={products}
+          productsDOM={this.props.productsDOM}
+          getItem={this.getItem}
+        />
+        ;
       </section>
     );
   }

@@ -17,10 +17,12 @@ class Product extends React.Component {
   }
 
   render() {
+    // console.log(this.props);
     return (
       <>
         {this.props.products.map((product, index) => {
           const { image, price, title } = product.fields;
+          const { id } = product.sys;
           return (
             <div
               key={index}
@@ -32,7 +34,11 @@ class Product extends React.Component {
               <article className="product">
                 <div className="img-container">
                   <img src={image.url} alt="product" className="product-img" />
-                  <button className="bag-btn" data-id="1">
+                  <button
+                    className="bag-btn"
+                    data-id="1"
+                    onClick={() => this.props.getItem(id)}
+                  >
                     <i className="fas fa-shopping-cart"> add to bag</i>
                   </button>
                 </div>

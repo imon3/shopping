@@ -20,13 +20,12 @@ class App extends React.Component {
       cartItems: "",
       cartTotal: "",
       cartContent: "",
-      productsDOM: "",
+      productsDOM: [],
       cart: []
     };
   }
 
   render() {
-    // console.log(this.state);
     return (
       <div className="App">
         <Route path="/" render={props => <Nav {...props} />} />
